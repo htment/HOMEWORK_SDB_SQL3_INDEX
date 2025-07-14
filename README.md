@@ -1,43 +1,6 @@
 # HOMEWORK_SQL3_INDEXES
 
 
-## Поднятие чистого инстанса MySQL 8.0+
-```
-docker run --name mysql8 -e MYSQL_ROOT_PASSWORD=123 -e MYSQL_USER=art -e MYSQL_PASSWORD=123 -p 3306:3306 -d mysql:8.0
-
-```
-![alt text](image.png)
-
-
--- дальше можно работать в консоли:
-
-```
-docker exec -it mysql8 mysql -u root -p
-```
-или 
-```
-docker exec -it mysql8 mysql -u root -p -e "SELECT user, host FROM mysql.user;"
-```
-![alt text](image-1.png)
-
-
--- а можно в бобре: 
-
-![alt text](image-2.png)
-
-Если плолучили ошибку при подключении 
-```
-debiver Public Key Retrieval is not allowed 
-```
-выбираем URL набираем: 
-```
-jdbc:mysql://192.168.230.130:3306/?allowPublicKeyRetrieval=true&useSSL=false
-```
-![alt text](image-3.png)
-
-![alt text](image-4.png)
-
-
 
 ```
 use sakila;
@@ -101,7 +64,7 @@ WHERE
     AND p.payment_date < '2005-07-31'
 GROUP BY 
     c.customer_id, c.last_name, c.first_name;
-    ```
+```
 Улучшения:
 
 Замена DISTINCT + оконной функции на GROUP BY
